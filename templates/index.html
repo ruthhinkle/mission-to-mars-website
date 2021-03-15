@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Mission to Mars</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+<body>
+  <div class="container">
+
+    <div class="jumbotron text-center">
+      <h1>Mission to Mars</h1>
+      <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape Mars</a></p>
+    </div>
+
+    <!-- <Featured Title, Image, Text> -->
+    <div class="row" id="mars-info">
+      <div class="col-md-12">
+        <h2>Latest Mars News</h2><br>
+        <h4 class="heading"><strong>{{mars.news_title}} </strong></h4><p>{{mars.news_text}}</p><br></h4>
+      </div>
+      <div class="col-md-8">
+        <small><img src = {{mars.featured_image}}></small>
+      </div>
+
+      <div class="col-md-4" id="mars-facts">
+        <div class="container">
+            <p> <h3> <strong>Mars Facts</strong></h3><table class="table table-striped"><h5>{{mars.facts_html|safe}}</h5> </table></p>
+        </div>
+      </div>
+    </div>
+    
+    <!-- <Hemisphere Images> -->    
+    <div class="row" id="Hemispheres">
+        <div class="col-md-12">
+            <p class="text-center"><h2>Hemispheres</h2></p><br>
+        </div>
+        <div class="container">
+            <div class="col-md-6">
+                <h4 class="heading"><strong>{{mars.hemisphere[0]['title']}}</strong></h4>
+                <p><img src= {{mars.hemisphere[0]['img_url']}} alt="Cerberus Hemisphere Enhanced" width="400" height="400"></p>
+            </div>
+            <div class="col-md-6">
+                <h4 class="heading"><strong>{{mars.hemisphere[1]['title']}}</strong></h4>
+                <p><img src= {{mars.hemisphere[1]['img_url']}} alt="Schiaparelli Hemisphere Enhanced" width="400" height="400"></p>
+                </div>
+            </div>
+
+            <br>
+
+            <div class="container">
+                <div class="col-md-6">
+                    <h4 class="heading"><strong>{{mars.hemisphere[2]['title']}}</strong></h4>
+                    <p><img src= {{mars.hemisphere[2]['img_url']}} alt="Cerberus Hemisphere Enhanced" width="400" height="400"></p>
+                </div>
+                <div class="col-md-6">
+                    <h4 class="heading"><strong>{{mars.hemisphere[3]['title']}}</strong></h4>
+                    <p><img src= {{mars.hemisphere[3]['img_url']}} alt="Schiaparelli Hemisphere Enhanced" width="400" height="400"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+   
+</body>
+
+</html>
